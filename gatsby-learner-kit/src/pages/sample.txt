@@ -1,0 +1,65 @@
+// import TextInput from 'MFE1/TextInput';
+
+// const MFE1TextInput = React.lazy(
+//   () => import('MFE1/TextInput')
+// );
+
+// const MFE2TextOutput = React.lazy(
+//   () => import('MFE2/TextOutput')
+// );
+
+// const MFE2TextOutputWithDelay = React.lazy(() => {
+//   return Promise.all([
+//     import('MFE2/TextOutput'),
+//     new Promise(resolve => setTimeout(resolve, 5000))
+//   ])
+//   .then(([moduleExports]) => moduleExports);
+// });
+
+{/* <TextInput /> */}
+      {/* <TextInput /> */}
+      {/* {!isSSR && (
+        <>
+        <React.Suspense fallback='Loading TextInput'>
+            <MFE1TextInput changeAction={textInput => setText(textInput)}/>
+          </React.Suspense>
+          <React.Suspense fallback='Loading TextOutput'>
+            <MFE2TextOutput text={text} />
+          </React.Suspense>
+          <React.Suspense fallback='Loading TextOutput with delay'>
+            <MFE2TextOutputWithDelay text={text} />
+          </React.Suspense>
+        </>
+      )} */}
+
+
+      <script src="../mfe1/dist/remoteEntry.js" />
+        {/* <script src="http://localhost:8082/remoteEntry.js" /> */}
+
+
+
+        // import asyncComponent from '../components/async';
+// import awaitFn from '../components/await';
+
+// const AsyncSharedComponent = asyncComponent(() => {
+//     return import('website2/SharedComponent');
+// });
+// import SharedComponent from "website2/SharedComponent";
+
+
+{/* <StaticImage
+        alt="Clifford, a reddish-brown pitbull, posing on a couch and looking stoically at the camera"
+        src="https://pbs.twimg.com/media/E1oMV3QVgAIr1NT?format=jpg&name=large"
+      /> */}
+      {!isSSR && (
+        <React.Suspense fallback='Loading Shared Component'>
+          <SharedComponent />
+          {/* {JSON.stringify(SharedComponent)} */}
+          {/* jiii */}
+        </React.Suspense>
+      )}
+      {/* <AsyncSharedComponent /> */}
+      {/* <SharedComponent /> */}
+      {/* {!isSSR && (
+        <SharedComponent />
+      )} */}
