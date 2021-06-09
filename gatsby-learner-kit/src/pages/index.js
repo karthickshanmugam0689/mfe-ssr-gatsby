@@ -42,23 +42,23 @@ const IndexPage = () => {
           <TextInput changeAction={textInput => setText(textInput)} isSSR={isSSR}/>
         ) : 
         (
-          <React.Suspense fallback={null}>
-            <MFE1TextInput changeAction={textInput => setText(textInput)} value={text}/>
-          </React.Suspense>
+          <>
+            <React.Suspense fallback={(
+              <TextInput changeAction={textInput => setText(textInput)} isSSR={isSSR} value={text} />
+            )}>
+              <MFE1TextInput changeAction={textInput => setText(textInput)} value={text}/>
+            </React.Suspense>
+            <br></br>
+            <React.Suspense fallback='Loading TextOutput'>
+              <MFE2TextOutput text={text} />
+            </React.Suspense>
+            <br></br>
+            <React.Suspense fallback='Loading TextOutput with delay'>
+              <MFE2TextOutputWithDelay text={text} />
+            </React.Suspense>
+          </>
         )
       }
-      {!isSSR && (
-        <>
-          <br></br>
-          <React.Suspense fallback='Loading TextOutput'>
-            <MFE2TextOutput text={text} />
-          </React.Suspense>
-          <br></br>
-          <React.Suspense fallback='Loading TextOutput with delay'>
-            <MFE2TextOutputWithDelay text={text} />
-          </React.Suspense>
-        </>
-      )}
     </Layout>
   )
 }

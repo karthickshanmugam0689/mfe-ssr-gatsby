@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 
-const TextInput = ({changeAction, isSSR}) => {
+const TextInput = ({changeAction, isSSR, value}) => {
 
   React.useEffect(
     () => {
@@ -14,7 +14,8 @@ const TextInput = ({changeAction, isSSR}) => {
   return (
     <input type="text" 
     id="textInput"
-      placeholder="Enter your search herereeere"
+      placeholder="Enter your search here"
+      value={value}
     />
   )
 };
