@@ -15,7 +15,7 @@ Take care that both the components (directly and with some delay) displays the t
 *TextInput.js* - Provider of TextInput mfe
 
 ### mfe2
-*TextOutput.hs* - Provider of TextOutput mfe
+*TextOutput.js* - Provider of TextOutput mfe
 
 ## Order of execution
 
